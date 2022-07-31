@@ -1,0 +1,86 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class ="container-fluid">
+        <h1 style="color: lightseagreen">Ximple Employee Data</h1>
+        <div class="d-flex">
+            <button type="button" (click)=" clickadd()" class = 'btn btn-outline-info my-2 my-sm-0' type = "submit"  data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+        </div>
+    </div>
+</nav>
+
+<table class = "table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Mobile No.</th>
+            <th scope="col">Department</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let row of employeeData">
+            <td>{{row.id}}</td>
+            <td>{{row.FirstName}}</td>
+            <td>{{row.LastName}}</td>
+            <td>{{row.Email}}</td>
+            <td>{{row.Mobile}}</td>
+            <td>{{row.Department}}</td>
+            <td>{{row.Salary}}</td>
+            <td>
+                <button (click) = "onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal" class = 'btn btn-outline-info my-2 my-sm-0'>Edit</button>
+                <button (click)= "deleteEmployee(row)" class ="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "formValue">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">First Name</label>
+                  <input type="text" class="form-control" formControlName = "FirstName" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Last Name</label>
+                  <input type="text" class="form-control" formControlName = "LastName" id="exampleInputPassword1" placeholder="Enter Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Email ID</label>
+                    <input type="Email" class="form-control" formControlName = "Email" id="exampleInputPassword1" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mobile Number</label>
+                    <input type="text" class="form-control" formControlName = "Mobile" id="exampleInputPassword1" placeholder="Enter Mobile No.">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Department</label>
+                  <input type="text" class="form-control" formControlName = "Department" id="exampleInputPassword1" placeholder="Enter Department">
+              </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Salary</label>
+                    <input type="text" class="form-control" formControlName = "Salary" id="exampleInputPassword1" placeholder="Enter Salary">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  id ="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf = "showAddd"(click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf = "showUpdate"(click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <body style= "background-color: black;"></body>

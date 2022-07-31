@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "FirstName": "Krish",
+      "LastName": "Employee",
+      "Email": "krishhnpatel@gmail.com",
+      "Mobile": "6692515164",
+      "Department": "Google",
+      "Salary": "400000"
+    },
+    {
+      "id": 2,
+      "FirstName": "Krish",
+      "LastName": "Patel",
+      "Email": "krishhnpatel@gmail.com",
+      "Mobile": "6692515164",
+      "Department": "GOogle docs",
+      "Salary": "40000"
+    },
+    {
+      "id": 3,
+      "FirstName": "Jayant",
+      "LastName": "parakh",
+      "Email": "krishhnpatel@gmail.com",
+      "Mobile": "6692515164",
+      "Department": "Google form",
+      "Salary": "400000"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
