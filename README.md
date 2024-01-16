@@ -48,6 +48,7 @@ Use the app to perform CRUD operations on the local database.
 The application uses a local database to store data records. The database is initialized with sample data for demonstration purposes.
 
 **Technologies Used**
+
 Angular - Front-end framework for building web applications.
 TypeScript - Superset of JavaScript for type-checking and tooling.
 LocalStorage - Using db.json for a mock database server. 
